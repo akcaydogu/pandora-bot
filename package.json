@@ -1,0 +1,28 @@
+{
+  "name": "pandora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.6.0",
+    "discord-music-player": "^4.0.8",
+    "discord-youtube-api": "^0.1.0",
+    "discord.js": "^12.3.1",
+    "distube": "^2.8.18",
+    "dotenv": "^8.2.0",
+    "embed": "0.0.1",
+    "ffmpeg-static": "^4.4.0",
+    "fs": "0.0.1-security",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.1",
+    "opusscript": "0.0.7",
+    "spotify-url-info": "^2.0.0",
+    "ytdl": "^1.4.1",
+    "ytdl-core": "^4.9.1"
+  }
+}

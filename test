@@ -1,0 +1,50 @@
+
+	if (message.author.bot) return;
+	if (!message.guild) return;
+	if (!message.content.startsWith(prefix2)) return;
+
+	const args = message.content.slice(prefix2.length).trim().split(/ +/g);
+	const cmd = args.shift().toLowerCase();
+
+	if (cmd === "muall") {
+		let member = message.mentions.members.first() || message.member
+	}
+	
+	if(cmd === "test2"){
+		var sql = `INSERT INTO prefix (id, prefix) VALUES ('${message.guild.id}', '!')`;
+		con.query(sql, function (err, result) {
+		  if (err) throw err;
+		  console.log("1 record inserted");
+		});
+	}
+
+
+    			if (!args.length){
+				if (lang === "en"){
+					return message.channel.send("You should enter argument.");
+				} else if (lang === "tr"){
+					return message.channel.send("Bir argüman girmelisin.");
+				}
+			} else {
+				if (args[0] === lang){
+					if(lang === "en") {
+						return message.channel.send("This language already selected");
+					} else if (lang === "tr"){
+						return message.channel.send("Zaten bu dil seçili");
+					}
+				} else if (args[0] === "en"){
+					var sql = `UPDATE guild SET lang = '${args[0]}' WHERE id = '${message.guild.id}'`
+					con.query(sql, function (err, result){
+						if (err) throw err;
+						console.log("Dil değiştirildi");
+						message.channel.send(`Language changed to English`);
+					});
+				} else if (args[0] === "tr"){
+					var sql = `UPDATE guild SET lang = '${args[0]}' WHERE id = '${message.guild.id}'`
+					con.query(sql, function (err, result){
+						if (err) throw err;
+						console.log("Dil değiştirildi");
+						message.channel.send(`Dil Türkçeye çevrildi`);
+					});
+				}
+			}
